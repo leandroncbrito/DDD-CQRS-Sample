@@ -44,6 +44,7 @@
     <Compile Include="Events\DomainNotification.cs" />
     <Compile Include="Events\DomainEvents.cs" />
     <Compile Include="Exceptions\CommandHandlerNotFoundException.cs" />
+    <Compile Include="Exceptions\QueryHandlerNofFoundException.cs" />
     <Compile Include="Interfaces\IAggregate.cs" />
     <Compile Include="Interfaces\IDomainEvent.cs" />
     <Compile Include="Interfaces\IDomainNotificationHandle.cs" />

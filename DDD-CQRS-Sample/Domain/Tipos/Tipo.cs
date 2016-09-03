@@ -8,12 +8,8 @@ namespace Domain.Tipos
     {
         public Guid TipoId { get; private set; }
         public string Nome { get; private set; }
-        public IEnumerable<Genero> Generos { get; private set; }
-
-        public Tipo()
-        {
-
-        }
+       
+        protected Tipo() { }
 
         public Tipo(string nome)
         {

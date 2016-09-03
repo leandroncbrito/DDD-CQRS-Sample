@@ -44,10 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\NovoEspetaculoCommand.cs" />
+    <Compile Include="Commands\NovoEspetaculo\Class1.cs" />
+    <Compile Include="Commands\NovoEspetaculo\NovoEspetaculoCommand.cs" />
     <Compile Include="Dispatcher\CommandDispatcher.cs" />
     <Compile Include="Events\DomainEvent.cs" />
-    <Compile Include="Handlers\NovoEspetaculoCommandHandler.cs" />
+    <Compile Include="Commands\NovoEspetaculo\NovoEspetaculoCommandHandler.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ICommandDispatcher.cs" />
     <Compile Include="Interfaces\ICommandHandler.cs" />

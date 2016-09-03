@@ -1,9 +1,4 @@
-﻿using DomainValidation.Validation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Domain.Espetaculos
 {
@@ -29,20 +24,6 @@ namespace Domain.Espetaculos
         public string Nome { get; private set; }
 
         public string Sinopse { get; private set; }
-
-        //public string Classificacao { get; private set; }
-
-        //public int Duracao { get; private set; }
-
-        //public string Observacoes { get; private set; }
-
-        //public string Video { get; private set; }
-
-        //public byte Destaque { get; private set; }
-
-        //public IEnumerable<Evento> Eventos { get; private set; }
-
-        //public ICollection<Comentario> Comentarios { get; private set; }
 
         public void Registrar()
         {

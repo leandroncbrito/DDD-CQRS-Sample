@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cadastro.CQRS.CommandStack.Commands
+namespace Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo
 {
     public class NovoEspetaculoCommand : ICommand
     {

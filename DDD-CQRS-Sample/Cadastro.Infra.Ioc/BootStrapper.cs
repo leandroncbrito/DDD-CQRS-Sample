@@ -1,18 +1,15 @@
-﻿using Cadastro.CQRS.CommandStack.Dispatcher;
-using Cadastro.CQRS.CommandStack.Handlers;
+﻿using Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo;
+using Cadastro.CQRS.CommandStack.Dispatcher;
 using Cadastro.CQRS.CommandStack.Interfaces;
+using Cadastro.CQRS.QueryStack.Dispatcher;
+using Cadastro.CQRS.QueryStack.Interfaces;
+using Cadastro.CQRS.QueryStack.Queries.EspetaculoPorId;
 using Cadastro.Data.Context;
 using Cadastro.Data.Interfaces;
 using Cadastro.Data.Repository;
 using Cadastro.Data.UoW;
-using Core.Domain.Events;
 using Domain.Espetaculos;
 using SimpleInjector;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cadastro.Infra.Ioc
 {
@@ -39,22 +36,22 @@ namespace Cadastro.Infra.Ioc
             container.Register<IRepository<Espetaculo>, Repository<Espetaculo>>(Lifestyle.Scoped);
 
             //// Infra Dados
-            // container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
+            container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
             container.Register<CadastroContext>(Lifestyle.Scoped);
 
             //// Handlers
             //container.Register<IHandler<DomainNotification>, DomainNotificationHandler>(Lifestyle.Scoped);
             //container.Register<IHandler<AlunoCadastradoEvent>, AlunoCadastradoHandler>(Lifestyle.Scoped);
-            //var assembliesQuery = new[] { typeof(FindDocumentTypeByNameQueryHandler).Assembly };
             var assembliesCommand = new[] { typeof(NovoEspetaculoCommandHandler).Assembly };
+            var assembliesQuery = new[] { typeof(EspetaculoPorIdQueryHandler).Assembly };
             //var assembliesEvent = new[] { typeof(SendNotificationHandler).Assembly };
 
-            //container.Register(typeof(IQueryHandler<,>), assembliesQuery, hybridLifestyle);
             container.Register(typeof(ICommandHandler<>), assembliesCommand, Lifestyle.Scoped);
+            container.Register(typeof(IQueryHandler<,>), assembliesQuery, Lifestyle.Scoped);
             //container.RegisterCollection(typeof(IDomainHandler<>), assembliesEvent);
 
-            //container.Register(typeof(IQueryDispatcher), typeof(QueryDispatcher));
             container.Register(typeof(ICommandDispatcher), typeof(CommandDispatcher));
+            container.Register(typeof(IQueryDispatcher), typeof(QueryDispatcher));
             //container.Register(typeof(IEventDispatcher), typeof(SimpleInjectorEventContainer));
 
             //// Infra Core

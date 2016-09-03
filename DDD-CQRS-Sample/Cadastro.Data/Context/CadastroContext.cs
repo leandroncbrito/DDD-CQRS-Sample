@@ -10,7 +10,7 @@ namespace Cadastro.Data.Context
 {
     public class CadastroContext : DbContext
     {
-        public CadastroContext() : base("DefaultConnection")
+        public CadastroContext() : base("EntityConnection")
         {
             this.Configuration.ProxyCreationEnabled = false;
             this.Configuration.LazyLoadingEnabled = false;

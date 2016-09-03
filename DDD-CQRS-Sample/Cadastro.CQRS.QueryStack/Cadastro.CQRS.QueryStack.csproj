@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SimpleInjector, Version=3.2.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.2.2\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,14 +44,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dispatcher\QueryDispatcher.cs" />
+    <Compile Include="Queries\EspetaculoPorId\EspetaculoPorIdQueryHandler.cs" />
+    <Compile Include="Interfaces\IQueryDispatcher.cs" />
+    <Compile Include="Interfaces\IQueryHandler.cs" />
+    <Compile Include="Interfaces\IQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\EspetaculoPorId\EspetaculoPorIdQuery.cs" />
+    <Compile Include="Queries\EspetaculoPorId\EspetaculoPorIdResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dispatcher\" />
     <Folder Include="Events\" />
-    <Folder Include="Handlers\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Queries\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cadastro.Application\Cadastro.Application.csproj">
+      <Project>{F7497095-8827-4B42-A8D6-4274E9543410}</Project>
+      <Name>Cadastro.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro.Data\Cadastro.Data.csproj">
+      <Project>{A0B5D131-03AE-44A6-B97B-9C7C07968769}</Project>
+      <Name>Cadastro.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Domain\Core.Domain.csproj">
+      <Project>{17D9739F-8EAF-4BCE-AEE2-5FF362444D65}</Project>
+      <Name>Core.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Cadastro.Domain.csproj">
+      <Project>{D4959ABF-A600-4AAE-ABAA-4BCF674AD116}</Project>
+      <Name>Cadastro.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

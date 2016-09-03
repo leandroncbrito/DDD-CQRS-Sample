@@ -6,7 +6,7 @@ using Cadastro.Data.Context;
 using Cadastro.Data.Interfaces;
 using Domain.Espetaculos;
 
-namespace Cadastro.CQRS.CommandStack.Handlers
+namespace Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo
 {
     public class NovoEspetaculoCommandHandler : ApplicationService, ICommandHandler<NovoEspetaculoCommand>
     {
