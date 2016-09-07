@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityBase.cs" />
     <Compile Include="Espetaculos\Espetaculo.cs" />
     <Compile Include="Espetaculos\EspetaculoScopes.cs" />
     <Compile Include="Eventos\Evento.cs" />

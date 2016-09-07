@@ -21,9 +21,14 @@ namespace Cadastro.Data.Repository
             DbSet = Db.Set<TEntity>();
         }
 
-        public virtual TEntity Adicionar(TEntity obj)
+        public virtual TEntity Adicionar(TEntity entity)
         {
-            var objreturn = DbSet.Add(obj);
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+
+            var objreturn = DbSet.Add(entity);
             return objreturn;
         }
 
@@ -37,13 +42,18 @@ namespace Cadastro.Data.Repository
             return DbSet.ToList();
         }
 
-        public virtual TEntity Atualizar(TEntity obj)
+        public virtual TEntity Atualizar(TEntity entity)
         {
-            var entry = Db.Entry(obj);
-            DbSet.Attach(obj);
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+
+            var entry = Db.Entry(entity);
+            DbSet.Attach(entity);
             entry.State = EntityState.Modified;
 
-            return obj;
+            return entity;
         }
 
         public virtual void Remover(Guid id)
