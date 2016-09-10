@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Cadastro.CQRS.QueryStack.Queries.EspetaculoPorId
 {
-    public class EspetaculoPorIdQuery : IQuery<EspetaculoPorIdResult>
+    public class EspetaculoPorIdQuery : IQuery<EspetaculoViewModel>
     {
         public EspetaculoPorIdQuery(Guid espetaculoid)
         {

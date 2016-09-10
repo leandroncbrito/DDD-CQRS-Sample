@@ -30,5 +30,17 @@ namespace Cadastro.CQRS.QueryStack.Dispatcher
 
             return handler.Executar(query);
         }
+
+        public TResult Executar<TResult>()
+        {
+            var handler = _resolver.GetInstance<IQueryHandler<TResult>>();
+
+            if (handler == null)
+            {
+                throw new QueryHandlerNofFoundException(null);
+            }
+
+            return handler.Executar();
+        }
     }
 }

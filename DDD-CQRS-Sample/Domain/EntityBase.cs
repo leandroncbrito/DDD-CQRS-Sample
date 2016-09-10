@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo
+namespace Domain
 {
-    class Class1
+    public abstract class EntityBase
     {
+        public Guid Id { get; set; }
     }
 }

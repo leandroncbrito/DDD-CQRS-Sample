@@ -45,13 +45,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dispatcher\QueryDispatcher.cs" />
+    <Compile Include="Queries\Espetaculos\EspetaculosQuery.cs" />
+    <Compile Include="Queries\Espetaculos\EspetaculosQueryHandler.cs" />
     <Compile Include="Queries\EspetaculoPorId\EspetaculoPorIdQueryHandler.cs" />
     <Compile Include="Interfaces\IQueryDispatcher.cs" />
     <Compile Include="Interfaces\IQueryHandler.cs" />
     <Compile Include="Interfaces\IQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries\EspetaculoPorId\EspetaculoPorIdQuery.cs" />
-    <Compile Include="Queries\EspetaculoPorId\EspetaculoPorIdResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Events\" />

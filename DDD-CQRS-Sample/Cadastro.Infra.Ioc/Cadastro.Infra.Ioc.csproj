@@ -51,6 +51,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Cadastro.Application\Cadastro.Application.csproj">
+      <Project>{F7497095-8827-4B42-A8D6-4274E9543410}</Project>
+      <Name>Cadastro.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Cadastro.CQRS.CommandStack\Cadastro.CQRS.CommandStack.csproj">
       <Project>{8EF64FC1-A8BA-48B7-8263-940B23E9C90C}</Project>
       <Name>Cadastro.CQRS.CommandStack</Name>
@@ -58,6 +62,10 @@
     <ProjectReference Include="..\Cadastro.CQRS.QueryStack\Cadastro.CQRS.QueryStack.csproj">
       <Project>{15D6FE4C-65A4-4C6C-80C6-68803704EAED}</Project>
       <Name>Cadastro.CQRS.QueryStack</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro.Data.MongoDB\Cadastro.Data.MongoDB.csproj">
+      <Project>{A2368BF0-F542-416D-885A-93101DF745BC}</Project>
+      <Name>Cadastro.Data.MongoDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cadastro.Data\Cadastro.Data.csproj">
       <Project>{A0B5D131-03AE-44A6-B97B-9C7C07968769}</Project>

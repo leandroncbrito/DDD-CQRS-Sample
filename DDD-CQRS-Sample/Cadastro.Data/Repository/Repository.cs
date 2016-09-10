@@ -21,15 +21,30 @@ namespace Cadastro.Data.Repository
             DbSet = Db.Set<TEntity>();
         }
 
-        public virtual TEntity Adicionar(TEntity entity)
+        public virtual void Adicionar(TEntity entity)
         {
             if (entity == null)
             {
                 throw new ArgumentNullException("entity");
             }
 
-            var objreturn = DbSet.Add(entity);
-            return objreturn;
+            DbSet.Add(entity);
+        }
+        
+        public virtual void Atualizar(TEntity entity)
+        {
+            if (entity == null)
+            {
+                throw new ArgumentNullException("entity");
+            }
+            
+            DbSet.Attach(entity);
+            Db.Entry(entity).State = EntityState.Modified;
+        }
+
+        public virtual void Remover(Guid id)
+        {
+            DbSet.Remove(DbSet.Find(id));
         }
 
         public virtual TEntity ObterPorId(Guid id)
@@ -40,25 +55,6 @@ namespace Cadastro.Data.Repository
         public virtual IEnumerable<TEntity> ObterTodos()
         {
             return DbSet.ToList();
-        }
-
-        public virtual TEntity Atualizar(TEntity entity)
-        {
-            if (entity == null)
-            {
-                throw new ArgumentNullException("entity");
-            }
-
-            var entry = Db.Entry(entity);
-            DbSet.Attach(entity);
-            entry.State = EntityState.Modified;
-
-            return entity;
-        }
-
-        public virtual void Remover(Guid id)
-        {
-            DbSet.Remove(DbSet.Find(id));
         }
 
         public IEnumerable<TEntity> Buscar(Expression<Func<TEntity, bool>> predicate)

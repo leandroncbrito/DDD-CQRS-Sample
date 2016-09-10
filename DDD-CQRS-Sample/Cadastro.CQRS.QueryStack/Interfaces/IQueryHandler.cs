@@ -6,4 +6,9 @@ namespace Cadastro.CQRS.QueryStack.Interfaces
     {
         TResult Executar(TQuery query);
     }
+
+    public interface IQueryHandler<TResult>
+    {
+        TResult Executar();
+    }
 }

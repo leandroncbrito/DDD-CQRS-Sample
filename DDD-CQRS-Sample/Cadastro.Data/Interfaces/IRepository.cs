@@ -9,11 +9,11 @@ namespace Cadastro.Data.Interfaces
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
-        TEntity Adicionar(TEntity obj);
-        TEntity ObterPorId(Guid id);
-        IEnumerable<TEntity> ObterTodos();
-        TEntity Atualizar(TEntity obj);
+        void Adicionar(TEntity obj);
+        void Atualizar(TEntity obj);
         void Remover(Guid id);
+        TEntity ObterPorId(Guid id);
+        IEnumerable<TEntity> ObterTodos();        
         IEnumerable<TEntity> Buscar(Expression<Func<TEntity, bool>> predicate);
         int SaveChanges();
     }
