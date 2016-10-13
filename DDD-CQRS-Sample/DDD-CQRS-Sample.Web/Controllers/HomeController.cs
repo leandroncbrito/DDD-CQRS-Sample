@@ -1,11 +1,11 @@
 ﻿using Cadastro.Application.ViewModels;
-using Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo;
+using Cadastro.CQRS.CommandStack.Commands.Espetaculos;
 using Cadastro.CQRS.CommandStack.Interfaces;
 using Cadastro.CQRS.QueryStack.Interfaces;
-using Cadastro.CQRS.QueryStack.Queries.EspetaculoPorId;
-using Cadastro.CQRS.QueryStack.Queries.Espetaculos;
+using Cadastro.CQRS.QueryStack.Queries.Espetaculo;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace DDD_CQRS_Sample.Web.Controllers
@@ -36,11 +36,13 @@ namespace DDD_CQRS_Sample.Web.Controllers
             return View("About");
         }
 
-        public ActionResult BuscarTodos()
+        public ActionResult Buscar()
         {
             ViewBag.Message = "Your contact page.";
 
             var result = queryDispatcher.Executar<IEnumerable<EspetaculoViewModel>>();
+
+            var espetaculo = queryDispatcher.Executar<EspetaculoPorIdQuery, EspetaculoViewModel>(new EspetaculoPorIdQuery(result.FirstOrDefault().EspetaculoId));
 
             return View("Contact", result);
         }

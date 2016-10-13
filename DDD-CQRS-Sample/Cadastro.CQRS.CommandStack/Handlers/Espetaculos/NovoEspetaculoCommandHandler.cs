@@ -1,21 +1,19 @@
 ﻿using Cadastro.Application;
-using Cadastro.CQRS.CommandStack.Commands;
-using Cadastro.CQRS.CommandStack.Events;
+using Cadastro.CQRS.CommandStack.Commands.Espetaculos;
 using Cadastro.CQRS.CommandStack.Interfaces;
-using Cadastro.Data.Context;
 using Cadastro.Data.Interfaces;
 using Domain.Espetaculos;
 
-namespace Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo
+namespace Cadastro.CQRS.CommandStack.Handlers.Espetaculos
 {
     public class NovoEspetaculoCommandHandler : ApplicationService, ICommandHandler<NovoEspetaculoCommand>
     {
-        private CadastroContext context;
-        private readonly IRepository<Espetaculo> repository;
+        //private CadastroContext context;
+        private readonly IEspetaculoRepository repository;
 
-        public NovoEspetaculoCommandHandler(CadastroContext context, IRepository<Espetaculo> repository, IUnitOfWork uow) : base(uow)
+        public NovoEspetaculoCommandHandler(IEspetaculoRepository repository, IUnitOfWork uow) : base(uow)
         {
-            this.context = context;
+            //this.context = context;
             this.repository = repository;
         }
 

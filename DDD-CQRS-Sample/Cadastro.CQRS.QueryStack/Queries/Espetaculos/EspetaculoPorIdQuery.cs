@@ -3,7 +3,7 @@ using Cadastro.CQRS.QueryStack.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Cadastro.CQRS.QueryStack.Queries.EspetaculoPorId
+namespace Cadastro.CQRS.QueryStack.Queries.Espetaculo
 {
     public class EspetaculoPorIdQuery : IQuery<EspetaculoViewModel>
     {

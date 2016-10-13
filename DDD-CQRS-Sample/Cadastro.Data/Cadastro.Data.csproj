@@ -54,8 +54,8 @@
     <Compile Include="EntityConfig\EventoConfig.cs" />
     <Compile Include="EntityConfig\GeneroConfig.cs" />
     <Compile Include="EntityConfig\TipoConfig.cs" />
+    <Compile Include="Interfaces\IEspetaculoRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IRepositoryMongoDb.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

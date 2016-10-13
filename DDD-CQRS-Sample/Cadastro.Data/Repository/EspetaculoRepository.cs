@@ -1,11 +1,10 @@
 ﻿using Cadastro.Data.Interfaces;
 using Domain.Espetaculos;
 using System;
-using System.Linq;
 
 namespace Cadastro.Data.Repository
 {
-    public class EspetaculoRepository
+    public class EspetaculoRepository : IEspetaculoRepository
     {
         private readonly IRepository<Espetaculo> repository;
 

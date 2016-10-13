@@ -1,11 +1,7 @@
 ﻿using Cadastro.CQRS.CommandStack.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Cadastro.CQRS.CommandStack.Commands.NovoEspetaculo
+namespace Cadastro.CQRS.CommandStack.Commands.Espetaculos
 {
     public class NovoEspetaculoCommand : ICommand
     {
