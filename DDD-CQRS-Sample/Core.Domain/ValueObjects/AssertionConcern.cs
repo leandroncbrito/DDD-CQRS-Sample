@@ -2,6 +2,7 @@
 using System.Linq;
 using Core.Domain.Events;
 using System.Text.RegularExpressions;
+using Core.Domain.Interfaces;
 
 namespace Core.Domain.ValueObjects
 {
@@ -17,7 +18,7 @@ namespace Core.Domain.ValueObjects
 
         private static void NotifyAll(IEnumerable<DomainNotification> notifications)
         {
-            notifications.ToList().ForEach(DomainEvents.Raise);
+            notifications.ToList().ForEach(DomainEvent.Raise);
         }
 
         public static DomainNotification AssertLength(string stringValue, int minimum, int maximum, string message)

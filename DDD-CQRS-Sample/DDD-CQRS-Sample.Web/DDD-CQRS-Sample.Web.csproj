@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DomainEventContainer.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
@@ -205,7 +206,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -248,6 +251,10 @@
     <ProjectReference Include="..\Cadastro.Infra.Ioc\Cadastro.Infra.Ioc.csproj">
       <Project>{bde9b7b0-3417-44d2-ad49-0e9e0ec01120}</Project>
       <Name>Cadastro.Infra.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Domain\Core.Domain.csproj">
+      <Project>{17D9739F-8EAF-4BCE-AEE2-5FF362444D65}</Project>
+      <Name>Core.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

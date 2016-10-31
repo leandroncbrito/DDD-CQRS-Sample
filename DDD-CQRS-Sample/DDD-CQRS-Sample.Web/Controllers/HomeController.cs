@@ -29,8 +29,9 @@ namespace DDD_CQRS_Sample.Web.Controllers
         public ActionResult Adicionar()
         {
             ViewBag.Message = "Your application description page.";
-            
-            var command = new NovoEspetaculoCommand("espetaculo", "sinopse", Guid.NewGuid(), Guid.NewGuid());
+
+            //var command = new NovoEspetaculoCommand("espetaculo", string.Empty, Guid.NewGuid(), Guid.NewGuid());
+            var command = new NovoEspetaculoCommand("Meu Espetáculo", "Novo espetáculo", Guid.NewGuid(), Guid.NewGuid());
             commandDispatcher.Executar(command);
 
             return View("About");

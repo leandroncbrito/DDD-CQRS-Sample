@@ -50,6 +50,10 @@
       <Project>{A0B5D131-03AE-44A6-B97B-9C7C07968769}</Project>
       <Name>Cadastro.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core.Domain\Core.Domain.csproj">
+      <Project>{17D9739F-8EAF-4BCE-AEE2-5FF362444D65}</Project>
+      <Name>Core.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Domain\Cadastro.Domain.csproj">
       <Project>{D4959ABF-A600-4AAE-ABAA-4BCF674AD116}</Project>
       <Name>Cadastro.Domain</Name>

@@ -1,4 +1,5 @@
 ﻿using Cadastro.Infra.Ioc;
+using Core.Domain.Events;
 using DDD_CQRS_Sample.Web.App_Start;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
@@ -23,9 +24,11 @@ namespace DDD_CQRS_Sample.Web.App_Start
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
-            container.Verify();
+            //container.Verify();
 
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
+
+            DomainEvent.Container = new DomainEventContainer(DependencyResolver.Current);
         }
 
         private static void InitializeContainer(Container container)

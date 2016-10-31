@@ -46,7 +46,8 @@
   <ItemGroup>
     <Compile Include="Commands\Espetaculos\NovoEspetaculoCommand.cs" />
     <Compile Include="Dispatcher\CommandDispatcher.cs" />
-    <Compile Include="Events\DomainEvent.cs" />
+    <Compile Include="Events\EspetaculoCadastradoEvent.cs" />
+    <Compile Include="Handlers\Espetaculos\EspetaculoCadastradoEventHandler.cs" />
     <Compile Include="Handlers\Espetaculos\NovoEspetaculoCommandHandler.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\ICommandDispatcher.cs" />
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\Cadastro.Application\Cadastro.Application.csproj">
       <Project>{F7497095-8827-4B42-A8D6-4274E9543410}</Project>
       <Name>Cadastro.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cadastro.Data.MongoDB\Cadastro.Data.MongoDB.csproj">
+      <Project>{A2368BF0-F542-416D-885A-93101DF745BC}</Project>
+      <Name>Cadastro.Data.MongoDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\Cadastro.Data\Cadastro.Data.csproj">
       <Project>{A0B5D131-03AE-44A6-B97B-9C7C07968769}</Project>

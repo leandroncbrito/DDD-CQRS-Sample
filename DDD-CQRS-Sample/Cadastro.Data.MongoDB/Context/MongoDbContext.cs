@@ -1,13 +1,13 @@
 ﻿using MongoDB.Driver;
 using System.Configuration;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Conventions;
 
 namespace Cadastro.Data.MongoDB.Context
 {
     public class MongoDbContext
     {
         public const string CONNECTION_STRING_NAME = "MongoDbConnection";
-        public const string DATABASE_NAME = "DDD-CQRS-Sample-R";
 
         private static readonly IMongoClient cliente;
         private static readonly IMongoDatabase banco;
@@ -16,9 +16,15 @@ namespace Cadastro.Data.MongoDB.Context
         {
             MongoDefaults.GuidRepresentation = GuidRepresentation.Standard;
 
+            //var convetionPack = new ConventionPack();
+            //convetionPack.Add(new CamelCaseElementNameConvention());
+            //ConventionRegistry.Register("camelCase", convetionPack, x => true);
+
             var connectionString = ConfigurationManager.ConnectionStrings[CONNECTION_STRING_NAME].ConnectionString;
+            var databaseName = ConfigurationManager.AppSettings["MongoDbDataBaseName"];
+
             cliente = new MongoClient(connectionString);
-            banco = cliente.GetDatabase(DATABASE_NAME);
+            banco = cliente.GetDatabase(databaseName);
         }
         
         public IMongoCollection<TEntity> GetCollection<TEntity>()

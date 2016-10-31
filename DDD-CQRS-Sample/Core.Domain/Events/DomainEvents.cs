@@ -2,42 +2,16 @@
 
 namespace Core.Domain.Events
 {
-    public static class DomainEvents
+    public static class DomainEvent
     {
         public static IContainer Container { get; set; }
 
         public static void Raise<T>(T args) where T : IDomainEvent
         {
-            try
-            {
-                if (Container != null)
-                {
-                    foreach (var handler in Container.GetServices(typeof(IHandles<T>)))
-                        ((IHandles<T>)handler).Handle(args);
-                }
-            }
-            catch
-            {
-                //throw;
-            }
-        }
+            if (Container == null) return;
 
-        public static void Notify<T>(T args) where T : IDomainEvent
-        {
-            if (args == null) return;
-
-            try
-            {
-                if (Container != null)
-                {
-                    foreach (var handler in Container.GetServices(typeof(IDomainNotificationHandle<T>)))
-                        ((IDomainNotificationHandle<T>)handler).Handle(args);
-                }
-            }
-            catch
-            {
-                //throw;
-            }
+            var obj = Container.GetInstance(typeof(IDomainHandler<T>));
+            ((IDomainHandler<T>)obj).Handle(args);
         }
     }
 }

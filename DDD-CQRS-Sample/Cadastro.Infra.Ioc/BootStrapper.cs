@@ -1,5 +1,6 @@
 ﻿using Cadastro.Application.ViewModels;
 using Cadastro.CQRS.CommandStack.Dispatcher;
+using Cadastro.CQRS.CommandStack.Events;
 using Cadastro.CQRS.CommandStack.Handlers.Espetaculos;
 using Cadastro.CQRS.CommandStack.Interfaces;
 using Cadastro.CQRS.QueryStack.Dispatcher;
@@ -13,6 +14,9 @@ using Cadastro.Data.MongoDB.Context;
 using Cadastro.Data.MongoDB.Repository;
 using Cadastro.Data.Repository;
 using Cadastro.Data.UoW;
+using Core.Domain.Events;
+using Core.Domain.Handlers;
+using Core.Domain.Interfaces;
 using Domain.Espetaculos;
 using SimpleInjector;
 using System.Collections.Generic;
@@ -50,8 +54,9 @@ namespace Cadastro.Infra.Ioc
             container.Register<MongoDbContext>(Lifestyle.Scoped);
 
             //// Handlers
-            //container.Register<IHandler<DomainNotification>, DomainNotificationHandler>(Lifestyle.Scoped);
-            //container.Register<IHandler<AlunoCadastradoEvent>, AlunoCadastradoHandler>(Lifestyle.Scoped);
+            container.Register<IDomainHandler<DomainNotification>, DomainNotificationHandler>(Lifestyle.Scoped);
+            container.Register<IDomainHandler<EspetaculoCadastradoEvent>, EspetaculoCadastradoEventHandler>(Lifestyle.Scoped);
+
             var assembliesCommand = new[] { typeof(NovoEspetaculoCommandHandler).Assembly };
             var assembliesQuery = new[] { typeof(EspetaculosQueryHandler).Assembly };
             //var assembliesEvent = new[] { typeof(SendNotificationHandler).Assembly };

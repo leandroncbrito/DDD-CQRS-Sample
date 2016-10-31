@@ -5,7 +5,9 @@ namespace Core.Domain.Interfaces
 {
     public interface IContainer
     {
-        object GetService(Type serviceType);
-        IEnumerable<object> GetServices(Type serviceType);
+        T GetInstance<T>();
+        object GetInstance(Type serviceType);
+        IEnumerable<T> GetAllInstances<T>();
+        IEnumerable<object> GetAllInstances(Type serviceType);
     }
 }

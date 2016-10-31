@@ -45,11 +45,13 @@
     <Compile Include="Events\DomainEvents.cs" />
     <Compile Include="Exceptions\CommandHandlerNotFoundException.cs" />
     <Compile Include="Exceptions\QueryHandlerNofFoundException.cs" />
+    <Compile Include="Handlers\DomainNotificationHandler.cs" />
     <Compile Include="Interfaces\IAggregate.cs" />
     <Compile Include="Interfaces\IDomainEvent.cs" />
     <Compile Include="Interfaces\IDomainNotificationHandle.cs" />
     <Compile Include="Interfaces\IContainer.cs" />
-    <Compile Include="Interfaces\IHandles.cs" />
+    <Compile Include="Interfaces\IEventDispatcher.cs" />
+    <Compile Include="Interfaces\IDomainHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueObjects\AssertionConcern.cs" />
   </ItemGroup>
