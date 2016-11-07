@@ -18,8 +18,7 @@ namespace Cadastro.CQRS.CommandStack.Handlers.Espetaculos
 
         public void Handle(EspetaculoCadastradoEvent args)
         {
-            // TODO: Enviar email
-            var model = EspetaculoAdapter.ToViewModel(args.Espetaculo);
+            var model = EspetaculoAdapter.ToReadModel(args.Espetaculo);
             repositoryMongoDb.Adicionar(model);
         }
 

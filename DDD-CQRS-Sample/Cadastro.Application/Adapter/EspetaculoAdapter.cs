@@ -5,7 +5,7 @@ namespace Cadastro.Application.Adapter
 {
     public class EspetaculoAdapter
     {
-        public static EspetaculoReadModel ToViewModel(Espetaculo espetaculo)
+        public static EspetaculoReadModel ToReadModel(Espetaculo espetaculo)
         {
             return new EspetaculoReadModel()
             {
