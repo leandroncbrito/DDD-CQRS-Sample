@@ -1,11 +1,10 @@
-﻿using Cadastro.Application.ViewModels;
+﻿using Cadastro.Application.ReadModels;
 using Cadastro.CQRS.QueryStack.Interfaces;
 using System;
-using System.Collections.Generic;
 
 namespace Cadastro.CQRS.QueryStack.Queries.Espetaculo
 {
-    public class EspetaculoPorIdQuery : IQuery<EspetaculoViewModel>
+    public class EspetaculoPorIdQuery : IQuery<EspetaculoReadModel>
     {
         public EspetaculoPorIdQuery(Guid espetaculoid)
         {

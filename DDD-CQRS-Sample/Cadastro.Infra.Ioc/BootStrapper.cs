@@ -1,12 +1,11 @@
-﻿using Cadastro.Application.ViewModels;
+﻿using Cadastro.Application.ReadModels;
 using Cadastro.CQRS.CommandStack.Dispatcher;
-using Cadastro.CQRS.CommandStack.Events;
+using Cadastro.CQRS.CommandStack.Events.Espetaculos;
 using Cadastro.CQRS.CommandStack.Handlers.Espetaculos;
 using Cadastro.CQRS.CommandStack.Interfaces;
 using Cadastro.CQRS.QueryStack.Dispatcher;
 using Cadastro.CQRS.QueryStack.Handlers.Espetaculos;
 using Cadastro.CQRS.QueryStack.Interfaces;
-using Cadastro.CQRS.QueryStack.Queries.Espetaculos;
 using Cadastro.Data.Context;
 using Cadastro.Data.Interfaces;
 using Cadastro.Data.Interfaces.Espetaculos;
@@ -19,7 +18,6 @@ using Core.Domain.Handlers;
 using Core.Domain.Interfaces;
 using Domain.Espetaculos;
 using SimpleInjector;
-using System.Collections.Generic;
 
 namespace Cadastro.Infra.Ioc
 {
@@ -44,7 +42,7 @@ namespace Cadastro.Infra.Ioc
 
             //// Infra Dados Repos
             container.Register<IRepository<Espetaculo>, Repository<Espetaculo>>(Lifestyle.Scoped);
-            container.Register<IRepositoryMongoDb<EspetaculoViewModel>, RepositoryMongoDb<EspetaculoViewModel>>(Lifestyle.Scoped);
+            container.Register<IRepositoryMongoDb<EspetaculoReadModel>, RepositoryMongoDb<EspetaculoReadModel>>(Lifestyle.Scoped);
             container.Register<IEspetaculoRepository, EspetaculoRepository>(Lifestyle.Scoped);
             container.Register<IEspetaculoRepositoryMongoDb, EspetaculoRepositoryMongoDb>(Lifestyle.Scoped);
 

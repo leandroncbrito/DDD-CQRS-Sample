@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Commands\Espetaculos\NovoEspetaculoCommand.cs" />
     <Compile Include="Dispatcher\CommandDispatcher.cs" />
-    <Compile Include="Events\EspetaculoCadastradoEvent.cs" />
+    <Compile Include="Events\Espetaculos\EspetaculoCadastradoEvent.cs" />
     <Compile Include="Handlers\Espetaculos\EspetaculoCadastradoEventHandler.cs" />
     <Compile Include="Handlers\Espetaculos\NovoEspetaculoCommandHandler.cs" />
     <Compile Include="Interfaces\ICommand.cs" />

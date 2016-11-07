@@ -1,14 +1,10 @@
 ﻿using Cadastro.Application;
-using Cadastro.Application.Adapter;
-using Cadastro.Application.ViewModels;
 using Cadastro.CQRS.CommandStack.Commands.Espetaculos;
-using Cadastro.CQRS.CommandStack.Events;
+using Cadastro.CQRS.CommandStack.Events.Espetaculos;
 using Cadastro.CQRS.CommandStack.Interfaces;
 using Cadastro.Data.Interfaces;
-using Cadastro.Data.Interfaces.Espetaculos;
 using Core.Domain.Events;
 using Domain.Espetaculos;
-using System;
 
 namespace Cadastro.CQRS.CommandStack.Handlers.Espetaculos
 {
@@ -28,8 +24,8 @@ namespace Cadastro.CQRS.CommandStack.Handlers.Espetaculos
 
             espetaculo.Registrar();
                         
-            repository.Adicionar(espetaculo);
-            
+            repository.Adicionar(espetaculo);            
+
             if (Commit())
             {   
                 DomainEvent.Raise(new EspetaculoCadastradoEvent(espetaculo));

@@ -43,7 +43,7 @@
     <Compile Include="Adapter\EspetaculoAdapter.cs" />
     <Compile Include="ApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\EspetaculoViewModel.cs" />
+    <Compile Include="ReadModels\EspetaculoReadModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cadastro.Data\Cadastro.Data.csproj">

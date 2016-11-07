@@ -1,4 +1,4 @@
-﻿using Cadastro.Application.ViewModels;
+﻿using Cadastro.Application.ReadModels;
 using System;
 using System.Collections.Generic;
 
@@ -6,10 +6,10 @@ namespace Cadastro.Data.Interfaces.Espetaculos
 {
     public interface IEspetaculoRepositoryMongoDb
     {
-        void Adicionar(EspetaculoViewModel espetaculo);
+        void Adicionar(EspetaculoReadModel espetaculo);
 
-        IEnumerable<EspetaculoViewModel> ObterTodos();
+        IEnumerable<EspetaculoReadModel> ObterTodos();
 
-        EspetaculoViewModel ObterPorId(Guid espetaculoId);
+        EspetaculoReadModel ObterPorId(Guid espetaculoId);
     }
 }

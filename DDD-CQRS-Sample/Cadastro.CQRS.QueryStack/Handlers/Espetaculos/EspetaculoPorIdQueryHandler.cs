@@ -1,13 +1,11 @@
-﻿using Cadastro.Application.ViewModels;
+﻿using Cadastro.Application.ReadModels;
 using Cadastro.CQRS.QueryStack.Interfaces;
 using Cadastro.CQRS.QueryStack.Queries.Espetaculo;
-using Cadastro.Data.Context;
-using Cadastro.Data.Interfaces;
 using Cadastro.Data.Interfaces.Espetaculos;
 
 namespace Cadastro.CQRS.QueryStack.Handlers.Espetaculos
 {
-    public class EspetaculoPorIdQueryHandler : IQueryHandler<EspetaculoPorIdQuery, EspetaculoViewModel>
+    public class EspetaculoPorIdQueryHandler : IQueryHandler<EspetaculoPorIdQuery, EspetaculoReadModel>
     {
         private readonly IEspetaculoRepositoryMongoDb repository;
 
@@ -16,7 +14,7 @@ namespace Cadastro.CQRS.QueryStack.Handlers.Espetaculos
             this.repository = repository;
         }
 
-        public EspetaculoViewModel Executar(EspetaculoPorIdQuery query)
+        public EspetaculoReadModel Executar(EspetaculoPorIdQuery query)
         {
             return repository.ObterPorId(query.EspetaculoId);
         }

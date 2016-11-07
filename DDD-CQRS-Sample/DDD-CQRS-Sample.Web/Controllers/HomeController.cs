@@ -1,4 +1,4 @@
-﻿using Cadastro.Application.ViewModels;
+﻿using Cadastro.Application.ReadModels;
 using Cadastro.CQRS.CommandStack.Commands.Espetaculos;
 using Cadastro.CQRS.CommandStack.Interfaces;
 using Cadastro.CQRS.QueryStack.Interfaces;
@@ -29,8 +29,7 @@ namespace DDD_CQRS_Sample.Web.Controllers
         public ActionResult Adicionar()
         {
             ViewBag.Message = "Your application description page.";
-
-            //var command = new NovoEspetaculoCommand("espetaculo", string.Empty, Guid.NewGuid(), Guid.NewGuid());
+                        
             var command = new NovoEspetaculoCommand("Meu Espetáculo", "Novo espetáculo", Guid.NewGuid(), Guid.NewGuid());
             commandDispatcher.Executar(command);
 
@@ -41,9 +40,9 @@ namespace DDD_CQRS_Sample.Web.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
-            var result = queryDispatcher.Executar<IEnumerable<EspetaculoViewModel>>();
+            var result = queryDispatcher.Executar<IEnumerable<EspetaculoReadModel>>();
 
-            var espetaculo = queryDispatcher.Executar<EspetaculoPorIdQuery, EspetaculoViewModel>(new EspetaculoPorIdQuery(result.FirstOrDefault().EspetaculoId));
+            var espetaculo = queryDispatcher.Executar<EspetaculoPorIdQuery, EspetaculoReadModel>(new EspetaculoPorIdQuery(result.FirstOrDefault().EspetaculoId));
 
             return View("Contact", result);
         }

@@ -1,12 +1,8 @@
 ﻿using Cadastro.Application.Adapter;
-using Cadastro.CQRS.CommandStack.Events;
+using Cadastro.CQRS.CommandStack.Events.Espetaculos;
 using Cadastro.Data.Interfaces.Espetaculos;
 using Core.Domain.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Cadastro.CQRS.CommandStack.Handlers.Espetaculos
 {

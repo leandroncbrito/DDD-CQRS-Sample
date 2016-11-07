@@ -28,5 +28,11 @@ namespace Cadastro.Application
             _unitOfWork.Commit();
             return true;
         }
+
+        public void RollBack()
+        {
+            _unitOfWork.Dispose();
+        }
+
     }
 }

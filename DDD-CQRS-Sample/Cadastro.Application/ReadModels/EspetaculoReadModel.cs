@@ -1,9 +1,9 @@
 ﻿using Domain;
 using System;
 
-namespace Cadastro.Application.ViewModels
+namespace Cadastro.Application.ReadModels
 {
-    public class EspetaculoViewModel : EntityBase
+    public class EspetaculoReadModel : EntityBase
     {
         public Guid EspetaculoId { get; set; }
 

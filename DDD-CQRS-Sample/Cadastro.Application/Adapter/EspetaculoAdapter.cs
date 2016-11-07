@@ -1,13 +1,13 @@
-﻿using Cadastro.Application.ViewModels;
+﻿using Cadastro.Application.ReadModels;
 using Domain.Espetaculos;
 
 namespace Cadastro.Application.Adapter
 {
     public class EspetaculoAdapter
     {
-        public static EspetaculoViewModel ToViewModel(Espetaculo espetaculo)
+        public static EspetaculoReadModel ToViewModel(Espetaculo espetaculo)
         {
-            return new EspetaculoViewModel()
+            return new EspetaculoReadModel()
             {
                 EspetaculoId = espetaculo.EspetaculoId,
                 GeneroId = espetaculo.GeneroId,
@@ -17,7 +17,7 @@ namespace Cadastro.Application.Adapter
             };
         }
 
-        public static Espetaculo ToDomainModel(EspetaculoViewModel espetaculo)
+        public static Espetaculo ToDomainModel(EspetaculoReadModel espetaculo)
         {
             return new Espetaculo(espetaculo.Nome, espetaculo.Sinopse, espetaculo.GeneroId, espetaculo.TipoId);
         }
